@@ -12,14 +12,9 @@ import mate.academy.service.ShoppingCartService;
 
 public class OrderServiceImpl implements OrderService {
     @Inject
-    private final OrderDao orderDao;
+    private OrderDao orderDao;
     @Inject
-    private final ShoppingCartService shoppingCartService;
-
-    public OrderServiceImpl(OrderDao orderDao, ShoppingCartService shoppingCartService) {
-        this.orderDao = orderDao;
-        this.shoppingCartService = shoppingCartService;
-    }
+    private ShoppingCartService shoppingCartService;
 
     @Override
     public Order completeOrder(ShoppingCart shoppingCart) {
